@@ -1,0 +1,44 @@
+{% extends "Dietetica/index.html" %}
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Vendedores</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="row">
+    <div class="col-md-4 text-center">
+        <img src="{% static 'assets/Yuli.jpeg' %}" alt="Yuliana Lipari Linares" class="img-thumbnail" width="300">
+        <p>Yuliana Lipari Linares. Estudiante de ingenieria en alimentos, atiende nuestro local desde el 2023.</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <img src="{% static 'assets/Davo.jpeg' %}" alt="Davo" class="img-thumbnail" width="200">
+        <p>Davo. Joven promesa de las ventas en dieteticas, por ahora maneja nuestras redes sociales y nuestro canal en Twich.</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <img src="{% static 'assets/Messi.jpg' %}" alt="Lionel Messi" class="img-thumbnail" width="200">
+        <p>Lionel Andres Messi. Nuestro mejor vendedor, si hubiese un balon de oro para vendedores el tendria, minimo, 8.</p>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre del vendedor</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for v in vendedores  %}
+        <tr>
+            <td>{{ v.nombre }}</td>
+            <td>{{ v.apellido }}</td>
+            <td>{{ v.DNI }}</td>
+            <td>{{ v.email }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}
